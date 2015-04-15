@@ -197,6 +197,14 @@ class Eventbrite(AccessMethodsMixin):
 
         return self.post("/events/", data=data)
 
+    def post_event_ticket_classes(self, event_id, data):
+        """
+        Creates a new ticket class for the given event.
+
+        POST /events/:id/ticket_classes/
+        """
+        return self.post("/events/{0}/ticket_classes/".format(event_id), data=data)
+
     def event_search(self, **data):
         return self.get("/events/search/", data=data)
 
